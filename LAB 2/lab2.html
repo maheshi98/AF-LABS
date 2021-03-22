@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+</head>
+<body>
+
+<script>
+    
+    function  getValue(callback){
+        setTimeout(function () {
+ let value = 10
+ callback(value)
+ 
+}, 1000)
+
+    }
+    function getNewValue(value, callback){
+        setTimeout(function (){
+            callback(value * 100)
+        }, 1000)
+    }
+return n;
+getValue(function(value){
+    getNewValue(value , function (newValue){
+        console.log(newValue);
+    })
+})
+
+</script>
+
+</body>
+</html>
