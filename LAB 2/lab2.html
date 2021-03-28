@@ -7,25 +7,29 @@
 
 <script>
     
-    function  getValue(callback){
-        setTimeout(function () {
- let value = 10
- callback(value)
- 
-}, 1000)
+    function  getValue(){
+        let value = 0;
+        return new Promise(function(resolve , reject){
 
-    }
+            setTimeout(function () {
+                 value = 10
+                 resolve(value)
+ 
+            }, 1000)
+
+        });
+
+        }
+    
     function getNewValue(value, callback){
         setTimeout(function (){
             callback(value * 100)
         }, 1000)
     }
-return n;
-getValue(function(value){
-    getNewValue(value , function (newValue){
-        console.log(newValue);
-    })
-})
+
+    getValue.then(function (value){
+        console.log(value);
+    });
 
 </script>
 
