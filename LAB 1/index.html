@@ -11,9 +11,14 @@
         console.log("Hello World")
     }
     
-    var fun = function(){
+    var hello = function(){
         console.log("Hello World")
     }
+
+    function printer(fun){
+        fun();
+    }
+    printer(hello);
 
     let fun = function(fun){
         fun = console.log("Hello World")
@@ -23,30 +28,48 @@
  console.log("Hello world");
      }
  let print = function(a){
-
  a();
     }
+    print(fun);
+
 
 let object = {
-    "name": "Mashi", 
-    "University": "SLIIT",
+    name: "Mashi", 
+    University: "SLIIT",
 
-    print:function(){
-    console.log(object.name);
+    printName:function(){
+    console.log(this.name);
+    },
+    printUni:function(){
     console.log(object.University);
 }
     }
-print(fun);
+    object.printName();
+    object.printUni();
 
-var object = vehicleName;
+    //print vehicle name
+    var vehicle = "Toyota";
+    function printVehicle(){
+        console.log(this.vehicle)
+    }
+    printVehicle();
 
-var printVehicleName = function(vehicleName){
+    var car = {
+        carName : "Audi",
+        printCar : printVehicle
+    }
+    car.printCar();
 
-}
+    // closuer
+    function taxCalculation(precentage){
+        return function(amount){
+            return amount * precentage;
 
-var vehicle  = vehiclename; 
+        }
+    }
 
-var getvehiclename = function()
+    var calculate = taxCalculation(0.12);
+    console.log(calculate(200));
 
 </script>
 
