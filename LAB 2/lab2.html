@@ -21,10 +21,28 @@
 
         }
     
-    function getNewValue(value, callback){
-        setTimeout(function (){
-            callback(value * 100)
-        }, 1000)
+    function getNewValue(value){
+
+        return new Promise(function(resolve , reject){
+
+            setTimeout(function () {
+                 resolve(value * 100)
+ 
+            }, 1000)
+
+        });
+
+    }
+
+    function setValue(value){
+        return value + 1999;
+    }
+
+    async function print(){
+        let value = await getValue();
+        value = await getNewValue(value);
+        value = setValue(value);
+        console.log(value);
     }
 
     getValue.then(function (value){
