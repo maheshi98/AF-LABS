@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+</head>
+<body>
+
+<script>
+    // Car function
+    function Vehicle(){
+        this.type = "Audi",
+        Vehicle.VehicleCount++
+
+    }
+
+    Vehicle.prototype.drive = function(){
+        console.log("Vehicle is driving");
+    }
+
+    Vehicle.VehicleCount = 0;
+
+    var newVehicle = new Vehicle();
+
+    class Car extends Vehicle{
+       
+    }
+   
+</script>
+
+</body>
+</html>
